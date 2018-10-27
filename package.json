@@ -1,0 +1,22 @@
+{
+  "name": "KaasuWebWallet",
+  "version": "1.0.0",
+  "description": "Fully client side web wallet for Kaasu",
+  "main": "index.js",
+  "dependencies": {
+    "localforage": "^1.7.2",
+    "typescript": "^2.9.2",
+    "workbox-build": "^3.4.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acedais/kaasu-webwallet-js.git"
+  },
+  "author": "gnock & Kaasu",
+  "license": "BSD-3",
+  "bugs": {
+    "url": "https://github.com/acedais/kaasu-webwallet-jsissues"
+  },
+  "homepage": "https://github.com/acedais/kaasu-webwallet-js#readme"
+}
