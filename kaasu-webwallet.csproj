@@ -157,8 +157,6 @@
     <None Include="wwwroot\pages\importFromQr.ts" />
     <None Include="wwwroot\pages\index.html" />
     <None Include="wwwroot\pages\index.ts" />
-    <None Include="wwwroot\pages\mining.html" />
-    <None Include="wwwroot\pages\mining.ts" />
     <None Include="wwwroot\pages\network.html" />
     <None Include="wwwroot\pages\network.ts" />
     <None Include="wwwroot\pages\receive.html" />
@@ -167,8 +165,6 @@
     <None Include="wwwroot\pages\send.ts" />
     <None Include="wwwroot\pages\settings.html" />
     <None Include="wwwroot\pages\settings.ts" />
-    <None Include="wwwroot\pages\support.html" />
-    <None Include="wwwroot\pages\support.ts" />
     <None Include="wwwroot\pages\termsOfUse.html" />
     <None Include="wwwroot\pages\termsOfUse.ts" />
     <None Include="wwwroot\providers\BlockchainExplorerProvider.ts" />

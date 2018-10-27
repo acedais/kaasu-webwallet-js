@@ -12,8 +12,7 @@
 	  "export": "Export",
 	  "settings": "Settings",
 	  "disconnect": "Disconnect",
-	  "network": "Network Stats",
-	  "mining": "Mining"
+	  "network": "Network Stats"
 	},
 	"global": {
 	  "loading": "Loading",
@@ -54,10 +53,7 @@
 	},
 	"bottom": {
 	  "termsOfUse": "Terms of Use",
-	  "support": "Support",
-	  "network": "Network Stats",
-	  "miningPool": "Mining Pool",
-	  "github": "GitHub"
+	  "network": "Network Stats"
 	},
 	"homepage": {
 	  "mainTitle": "Secured Kaasu Wallet",
@@ -71,19 +67,19 @@
 	  "notes": {
 		"secure": {
 		  "title": "Secure",
-		  "description": "No servers, fully encrypted!"
+		  "description": "Your information is not passed to server!"
 		},
 		"fast": {
 		  "title": "Fast",
-		  "description": "Send Everywhere, Anytime!"
+		  "description": "Access your Kaasu from anywhere instantly!"
 		},
 		"technology": {
-		  "title": "Unique Technology",
+		  "title": "Technology",
 		  "description": "Connected directly to the Kaasu blockchain!"
 		},
 		"openSource": {
-		  "title": "Fully Open-source",
-		  "description": "Available on Github!"
+		  "title": "Open Source",
+		  "description": "Codes are open and available on Github!"
 		}
 	  }
 	},
@@ -104,7 +100,7 @@
 		"emptyWallet": "You currently have no funds in this wallet.",
 		"waitSync": "Please wait until the wallet is updated",
 		"beReallyPatient": "The initial setup can take some time...",
-		"getTRTLAddress": "Receive TRTL"
+		"getKSUAddress": "Receive KSU"
 	  },
 	  "txDetails":{
 		"title":"Transaction details",
@@ -167,15 +163,6 @@
 		"content":"KaasuWallet is a web-based interface. It helps you use Kaasu without running a full Kaasu node. <br/>We recommend you treat KaasuWallet like you will treat your actual wallet."
 	  }
 	},
-	"supportPage":{
-	  "title":"Support",
-	  "subtitle":"We are here to help!",
-	  "getInTouchBlock":{
-		"title":"Let's Get In Touch!",
-		"content":"Do you have ideas or feedback that could help us improve the wallet? Contact us!",
-		"discord":"Kaasu Discord Channel"
-	  }
-	},
 	"networkPage":{
 	  "title":"Network stats",
 	  "subtitle":"Insights on the Kaasu network",
@@ -188,7 +175,7 @@
 	  }
 	},
 	"sendPage":{
-	  "title":"Send TRTL",
+	  "title":"Send KSU",
 	  "sendBlock":{
 		"address":{
 		  "label":"Destination address",
@@ -255,7 +242,7 @@
 	  }
 	},
 	"receivePage":{
-	  "title":"Receive TRTL",
+	  "title":"Receive KSU",
 	  "receiveBlock":{
 		"address":{
 		  "title":"Your address to receive funds:",
@@ -280,15 +267,6 @@
 	  "nfcErrorModal":{
 		"titleInsufficientCapacity":"Tag capacity insufficient"
 	  }
-	},
-	"miningPage":{
-	  "title":"Mining information",
-	  "subtitle":"Support the network by mining and be rewarded with TRTL",
-    "contentBlock": {
-      "title": "How to get started mining",
-      "intro": "Mining helps decentralise the network and allows you to earn Kaasu. There is no need for specialist equipment to mine Kaasu.",
-      "linkText": "Click here to download our one click miner."
-    }
 	},
 	"settingsPage":{
 	  "title":"Settings",
@@ -368,7 +346,7 @@
 	  },
 	  "warningBlock":{
 		"title":"Warning",
-		"content":"If you choose to save your private keys or your mnemonic phrase, TRTLASE DO NOT store them in clear-text for your own safety.<br/>The file is an alternate solution where your keys are encrypted and contains a backup of all your transactions to spare you a future synchronisation."
+		"content":"If you choose to save your private keys or your mnemonic phrase, KSUASE DO NOT store them in clear-text for your own safety.<br/>The file is an alternate solution where your keys are encrypted and contains a backup of all your transactions to spare you a future synchronisation."
 	  },
 	  "exportBlock":{
 		"title":"Export your RAW credentials",

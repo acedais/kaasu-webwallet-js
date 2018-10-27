@@ -13,7 +13,6 @@
       "settings": "Подешавања",
       "disconnect": "Прекини везу",
       "network": "Статистика Мреже",
-      "mining": "Рударење"
     },
     "global": {
       "loading": "Учитавам",
@@ -54,10 +53,7 @@
     },
     "bottom": {
       "termsOfUse": "Правила коришћења",
-      "support": "Подршка",
-      "network": "Статистика Мреже",
-      "miningPool": "Пул за рударење",
-      "github": "Гитхаб"
+      "network": "Статистика Мреже"
     },
     "homepage": {
       "mainTitle": "Безбедан Масари Новчаник",
@@ -104,7 +100,7 @@
         "emptyWallet": "Тренутно немате средстава у новчанику",
         "waitSync": "Сачекајте да се новчаник освежи",
         "beReallyPatient": "Овај поступак може да потраје...",
-        "getTRTLAddress": "Адреса за пријем новчића"
+        "getKSUAddress": "Адреса за пријем новчића"
       },
       "txDetails": {
         "title": "Transaction details",
@@ -280,15 +276,6 @@
       },
       "nfcErrorModal": {
         "titleInsufficientCapacity": "Tag capacity insufficient"
-      }
-    },
-    "miningPage": {
-      "title": "Mining information",
-      "subtitle": "Support the network by mining and be rewarded with TRTL",
-      "contentBlock": {
-        "title": "How to get started mining",
-        "intro": "Mining helps decentralise the network and allows you to earn Kaasu. There is no need for specialist equipment to mine Kaasu.",
-        "linkText": "Click here to read our mining guide"
       }
     },
     "settingsPage": {

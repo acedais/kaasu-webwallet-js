@@ -12,8 +12,7 @@
       "export": "Exporter",
       "settings": "Paramètres",
       "disconnect": "Déconnection",
-      "network": "Stats du réseau",
-      "mining": "Minage"
+      "network": "Stats du réseau"
     },
     "global": {
       "loading": "Chargement",
@@ -54,10 +53,7 @@
     },
     "bottom": {
       "termsOfUse": "Conditions générales d'utilisation",
-      "support": "Support",
-      "network": "Stats du réseau",
-      "miningPool": "Pool de minage",
-      "github": "GitHub"
+      "network": "Stats du réseau"
     },
     "homepage": {
       "mainTitle": "Portefeuille sécurisé pour Kaasu",
@@ -104,7 +100,7 @@
         "emptyWallet": "Vous n'avez aucun fond sur ce portefeuille",
         "waitSync": "Veuillez attendre la fin de la synchronisation",
         "beReallyPatient": "La première synchronisation peut prendre quelques minutes...",
-        "getTRTLAddress": "Obtenir mon adresse pour recevoir des TRTL"
+        "getKSUAddress": "Obtenir mon adresse pour recevoir des KSU"
       },
       "txDetails": {
         "title": "Détails de la transaction",
@@ -167,15 +163,6 @@
         "content": "KaasuWallet est un service web. Il vous aide à utiliser Kaasu facilement sans avoir un installer des logiciels. <br/>Nous vous conseillons de traiter ce site comme vous traiteriez votre portefeuille."
       }
     },
-    "supportPage": {
-      "title": "Support",
-      "subtitle": "Vous avez besoins d'aide, nous somme la pour aider !",
-      "getInTouchBlock": {
-        "title": "Reston en contact !",
-        "content": "Vous avez des idées, des retours pour aider à améliorer le service ? Contactez nous !",
-        "discord": "Discord Officiel de Kaasu"
-      }
-    },
     "networkPage": {
       "title": "Statistiques du réseau",
       "subtitle": "Détails sur le réseaux Kaasu",
@@ -188,7 +175,7 @@
       }
     },
     "sendPage": {
-      "title": "Envoyer des TRTL",
+      "title": "Envoyer des KSU",
       "sendBlock": {
         "address": {
           "label": "Adresse de destination",
@@ -255,7 +242,7 @@
       }
     },
     "receivePage": {
-      "title": "Recevoir des TRTL",
+      "title": "Recevoir des KSU",
       "receiveBlock": {
         "address": {
           "title": "Votre adresse pour recevoir des fonds",
@@ -279,15 +266,6 @@
       },
       "nfcErrorModal": {
         "titleInsufficientCapacity": "Tag capacity insufficient"
-      }
-    },
-    "miningPage": {
-      "title": "Mining information",
-      "subtitle": "Support the network by mining and be rewarded with TRTL",
-      "contentBlock": {
-        "title": "How to get started mining",
-        "intro": "Mining helps decentralise the network and allows you to earn Kaasu. There is no need for specialist equipment to mine Kaasu.",
-        "linkText": "Click here to read our mining guide"
       }
     },
     "settingsPage": {

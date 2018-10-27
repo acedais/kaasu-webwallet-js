@@ -12,8 +12,7 @@
       "export": "Export",
       "settings": "Einstellungen",
       "disconnect": "Verbindung trennen",
-      "network": "Netzwerkstatus",
-      "mining": "Minen"
+      "network": "Netzwerkstatus"
     },
     "global": {
       "loading": "wird geladen",
@@ -54,10 +53,7 @@
     },
     "bottom": {
       "termsOfUse": "Nutzungsbedingungen",
-      "support": "Support",
-      "network": "Netzwerkstatus",
-      "miningPool": "Mining Pool",
-      "github": "GitHub"
+      "network": "Netzwerkstatus"
     },
     "homepage": {
       "mainTitle": "Gesicherte Kaasu Wallet",
@@ -104,7 +100,7 @@
         "emptyWallet": "Du hast zur Zeit kein Guthaben auf dieser Wallet",
         "waitSync": "Warte bis die Wallet upgedated ist",
         "beReallyPatient": "Die erste Einrichtung kann etwas dauern...",
-        "getTRTLAddress": "Hol die deine Adresse um TRTL zu empfangen"
+        "getKSUAddress": "Hol die deine Adresse um KSU zu empfangen"
       },
       "txDetails": {
         "title": "Transaktionsdetails",
@@ -167,15 +163,6 @@
         "content": "KaasuWallet ist ein web-basierendes Interface. Es hilft beim Nutzen von Kaasu ohne einen vollen Node zu betreiben. <br/>Wir empfehlen KaasuWallet sicherheitstechnisch wie eine richtige Wallet zu behandeln."
       }
     },
-    "supportPage": {
-      "title": "Support",
-      "subtitle": "Du brauchst Hilfe, wir sind hier um zu helfen!",
-      "getInTouchBlock": {
-        "title": "Nehmen wir Kontakt auf!",
-        "content": "Wenn du Ideen oder Feedback hast um die Wallet zu verbessern, kontaktiere uns!",
-        "discord": "Kaasu Discord Channel"
-      }
-    },
     "networkPage": {
       "title": "Netzwerkstatus",
       "subtitle": "Einblick ins Marsir Netzwerk",
@@ -188,7 +175,7 @@
       }
     },
     "sendPage": {
-      "title": "Schicke TRTL",
+      "title": "Schicke KSU",
       "sendBlock": {
         "address": {
           "label": "Zieladresse",
@@ -255,7 +242,7 @@
       }
     },
     "receivePage": {
-      "title": "Empfange TRTL",
+      "title": "Empfange KSU",
       "receiveBlock": {
         "address": {
           "title": "Deine Adresse um Guthaben zu empfangen",
@@ -279,15 +266,6 @@
       },
       "nfcErrorModal": {
         "titleInsufficientCapacity": "Tag capacity insufficient"
-      }
-    },
-    "miningPage": {
-      "title": "Mining information",
-      "subtitle": "Support the network by mining and be rewarded with TRTL",
-      "contentBlock": {
-        "title": "How to get started mining",
-        "intro": "Mining helps decentralise the network and allows you to earn Kaasu. There is no need for specialist equipment to mine Kaasu.",
-        "linkText": "Click here to read our mining guide"
       }
     },
     "settingsPage": {

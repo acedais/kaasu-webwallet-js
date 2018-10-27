@@ -12,8 +12,7 @@
       "export": "Exportálás",
       "settings": "Beállítások",
       "disconnect": "Szétkapcsolás",
-      "network": "Hálózati statisztika",
-      "mining": "Bányászás"
+      "network": "Hálózati statisztika"
     },
     "global": {
       "loading": "Betöltés",
@@ -54,10 +53,7 @@
     },
     "bottom": {
       "termsOfUse": "Felhasználási feltételek",
-      "support": "Ügyfélszolgálat",
-      "network": "Hálózati statisztika",
-      "miningPool": "Bányász pool",
-      "github": "GitHub"
+      "network": "Hálózati statisztika"
     },
     "homepage": {
       "mainTitle": "Biztonságos Kaasu tárca",
@@ -104,7 +100,7 @@
         "emptyWallet": "Jelenleg nincsen egyenleged ebben a tárcában.",
         "waitSync": "Kérlek, várj, míg a tárca naprakész lesz",
         "beReallyPatient": "A kezdeti beállítás némi időbe telhet...",
-        "getTRTLAddress": "TRTL fogadása"
+        "getKSUAddress": "KSU fogadása"
       },
       "txDetails": {
         "title": "Tranzakciórészletek",
@@ -188,7 +184,7 @@
       }
     },
     "sendPage": {
-      "title": "TRTL küldése",
+      "title": "KSU küldése",
       "sendBlock": {
         "address": {
           "label": "Kedvezményezett címe",
@@ -255,7 +251,7 @@
       }
     },
     "receivePage": {
-      "title": "TRTL fogadása",
+      "title": "KSU fogadása",
       "receiveBlock": {
         "address": {
           "title": "Pénz fogadására szolgáló cím:",
@@ -279,15 +275,6 @@
       },
       "nfcErrorModal": {
         "titleInsufficientCapacity": "Tag capacity insufficient"
-      }
-    },
-    "miningPage": {
-      "title": "Mining information",
-      "subtitle": "Support the network by mining and be rewarded with TRTL",
-      "contentBlock": {
-        "title": "How to get started mining",
-        "intro": "Mining helps decentralise the network and allows you to earn Kaasu. There is no need for specialist equipment to mine Kaasu.",
-        "linkText": "Click here to read our mining guide"
       }
     },
     "settingsPage": {
