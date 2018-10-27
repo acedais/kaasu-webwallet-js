@@ -23,6 +23,6 @@ global.config = {
     openAliasPrefix: "ksu",
     coinName: 'KAASU',
     coinUriPrefix: 'kaasu:',
-    avgBlockTime: 60,
+    avgBlockTime: 10,
     maxBlockNumber: 500000000,
 };
