@@ -143,8 +143,6 @@
     <None Include="wwwroot\pages\createWallet.ts" />
     <None Include="wwwroot\pages\disconnect.html" />
     <None Include="wwwroot\pages\disconnect.ts" />
-    <None Include="wwwroot\pages\donate.html" />
-    <None Include="wwwroot\pages\donate.ts" />
     <None Include="wwwroot\pages\export.html" />
     <None Include="wwwroot\pages\export.ts" />
     <None Include="wwwroot\pages\import.html" />

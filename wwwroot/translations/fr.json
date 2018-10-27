@@ -10,7 +10,6 @@
       "send": "Envoyer",
       "receive": "Recevoir",
       "export": "Exporter",
-      "donate": "Contribuer",
       "settings": "Paramètres",
       "disconnect": "Déconnection",
       "network": "Stats du réseau",
@@ -56,7 +55,6 @@
     "bottom": {
       "termsOfUse": "Conditions générales d'utilisation",
       "support": "Support",
-      "donate": "Contribuer",
       "network": "Stats du réseau",
       "miningPool": "Pool de minage",
       "github": "GitHub"
@@ -167,18 +165,6 @@
       "disclaimerBlock": {
         "title": "Risques liés à l'utilisation de KaasuWallet",
         "content": "KaasuWallet est un service web. Il vous aide à utiliser Kaasu facilement sans avoir un installer des logiciels. <br/>Nous vous conseillons de traiter ce site comme vous traiteriez votre portefeuille."
-      }
-    },
-    "donatePage": {
-      "title": "Contribuer",
-      "subtitle": "Aidez à financer le développement et payer les factures de ce service",
-      "webwalletBlock": {
-        "title": "Portefeuille en ligne",
-        "content": "Ce portefeuille est développé par Gnock sur son temps libre.<br/>Si vous voulez aider au développement, payer les serveur et que vous aimez ce service, considérez une petite donation: <br/><br/>"
-      },
-      "masariFundBlock": {
-        "title": "Fond de développement de Kaasu",
-        "content": "Pour aidez Kaasu globalement, vous pouvez donner à cette adresse"
       }
     },
     "supportPage": {

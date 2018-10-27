@@ -10,7 +10,6 @@
       "send": "Senden",
       "receive": "Empfangen",
       "export": "Export",
-      "donate": "Spenden",
       "settings": "Einstellungen",
       "disconnect": "Verbindung trennen",
       "network": "Netzwerkstatus",
@@ -56,7 +55,6 @@
     "bottom": {
       "termsOfUse": "Nutzungsbedingungen",
       "support": "Support",
-      "donate": "Spenden",
       "network": "Netzwerkstatus",
       "miningPool": "Mining Pool",
       "github": "GitHub"
@@ -167,18 +165,6 @@
       "disclaimerBlock": {
         "title": "Risiko beim benutzen der KaasuWallet",
         "content": "KaasuWallet ist ein web-basierendes Interface. Es hilft beim Nutzen von Kaasu ohne einen vollen Node zu betreiben. <br/>Wir empfehlen KaasuWallet sicherheitstechnisch wie eine richtige Wallet zu behandeln."
-      }
-    },
-    "donatePage": {
-      "title": "Spenden",
-      "subtitle": "Hilf uns die Enwicklung zu finanzieren und die Rechnungen zu bezahlen",
-      "webwalletBlock": {
-        "title": "Webwallet",
-        "content": "Diese Webwallet ist von Gnock in seiner Freizeit entwickelt.<br/>Bitte denk über eine Spende nach wenn dir die App gefällt und du bei der Bezahlung der Server und der Enwicklung helfen willst.: <br/><br/>"
-      },
-      "masariFundBlock": {
-        "title": "Kaasu Entwicklerfonds",
-        "content": "Spende an diese Adresse um Kaasu zu helfen"
       }
     },
     "supportPage": {

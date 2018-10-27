@@ -24,8 +24,7 @@ Translations:
 # Contributing
 - You can help us by translation the wallet in your native language, it's really easy!  
 Read [the translations guide](TRANSLATIONS.md) to get instructions on how to do that
-- Report bugs & ideas to help us improve the web wallet by opening an issue 
-- [Make a donation to Kaasu](https://getkaasu.com/#!donate)
+- Report bugs & ideas to help us improve the web wallet by opening an issue
 
 # Forks / Other Coins
 We have been receiving multiple coin developers help to fork it. As the time required to develop this project is heavy, please consider giving a mention to this project if you fork it.

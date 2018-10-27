@@ -10,7 +10,6 @@
 	  "send": "Send",
 	  "receive": "Receive",
 	  "export": "Export",
-	  "donate": "Donate",
 	  "settings": "Settings",
 	  "disconnect": "Disconnect",
 	  "network": "Network Stats",
@@ -56,7 +55,6 @@
 	"bottom": {
 	  "termsOfUse": "Terms of Use",
 	  "support": "Support",
-	  "donate": "Donate",
 	  "network": "Network Stats",
 	  "miningPool": "Mining Pool",
 	  "github": "GitHub"
@@ -167,18 +165,6 @@
 	  "disclaimerBlock":{
 		"title":"Risk of Using KaasuWallet",
 		"content":"KaasuWallet is a web-based interface. It helps you use Kaasu without running a full Kaasu node. <br/>We recommend you treat KaasuWallet like you will treat your actual wallet."
-	  }
-	},
-	"donatePage":{
-	  "title":"Donate",
-	  "subtitle":"Help to fund the development and pay the bills",
-	  "webwalletBlock":{
-		"title":"Webwallet",
-		"content":"This Web wallet is developed by Gnock on his free time.<br/>If you want to help the development, help to pay for the servers, and like this app, please consider a donation: <br/><br/>"
-	  },
-	  "masariFundBlock":{
-		"title":"Kaasu Dev fund",
-		"content":"To help Kaasu, you can donate at these addresses"
 	  }
 	},
 	"supportPage":{

@@ -10,7 +10,6 @@
       "send": "Küldés",
       "receive": "Fogadás",
       "export": "Exportálás",
-      "donate": "Adományozás",
       "settings": "Beállítások",
       "disconnect": "Szétkapcsolás",
       "network": "Hálózati statisztika",
@@ -56,7 +55,6 @@
     "bottom": {
       "termsOfUse": "Felhasználási feltételek",
       "support": "Ügyfélszolgálat",
-      "donate": "Adományozás",
       "network": "Hálózati statisztika",
       "miningPool": "Bányász pool",
       "github": "GitHub"
@@ -167,18 +165,6 @@
       "disclaimerBlock": {
         "title": "A KaasuWallet használatának kockázatai",
         "content": "A KaasuWallet egy webes felület, mely lehetővé teszi a Kaasu használatát teljes csomópont futtatása nélkül.<br/>Kezeld úgy a KaasuWalletet, mintha az a valódi pénztárcád lenne."
-      }
-    },
-    "donatePage": {
-      "title": "Adományozás",
-      "subtitle": "Segíts a fejlesztés finanszírozásában és a számlák kifizetésében",
-      "webwalletBlock": {
-        "title": "Webtárca",
-        "content": "A webtárcát Gnock fejleszti szabadidejében.<br/>Ha szeretnéd segíteni a fejlesztést, a szerverek fizetését és tetszik az applikáció, úgy vedd fontolóra az adományozást:<br/><br/>"
-      },
-      "masariFundBlock": {
-        "title": "Kaasu fejlesztési alap",
-        "content": "Ha szeretnél segíteni a Kaasunak, az alábbi címekre adományozhatsz"
       }
     },
     "supportPage": {
