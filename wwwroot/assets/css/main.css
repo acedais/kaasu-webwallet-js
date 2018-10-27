@@ -581,6 +581,7 @@ body.native .indexTab .mainBlock > .actions{
 }
 .indexTab .notes:last-child{
 	margin-right: 0;
+	padding: 15px 5px 15px 5px;
 }
 @media screen and (max-width: 940px) {
 	.indexTab .notes, .indexTab .notes:last-child{
