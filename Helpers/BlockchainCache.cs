@@ -155,6 +155,11 @@ namespace WebWallet.Helpers
                         var gCounter = start;
 
                         var txHashes = new List<string>();
+                        
+                        if (txHashes == null)
+                        {
+                            return;
+                        }
 
                         if (currentHeight > start)
                         {
