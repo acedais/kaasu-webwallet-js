@@ -67,7 +67,7 @@
 	  "notes": {
 		"secure": {
 		  "title": "Secure",
-		  "description": "Your information is not passed to server!"
+		  "description": "Your wallet information is not sent to server!"
 		},
 		"fast": {
 		  "title": "Fast",
@@ -79,7 +79,7 @@
 		},
 		"openSource": {
 		  "title": "Open Source",
-		  "description": "Codes are open and available on Github!"
+		  "description": "Codes are available for you to view on Github!"
 		}
 	  }
 	},
