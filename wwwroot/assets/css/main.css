@@ -577,7 +577,7 @@ body.native .indexTab .mainBlock > .actions{
 	display: inline-block;
 	margin-right:6%;
 	vertical-align: middle;
-	padding: 0px 15px 0px 15px;
+	padding: 15px 5px 15px 5px;
 }
 .indexTab .notes:last-child{
 	margin-right: 0;
