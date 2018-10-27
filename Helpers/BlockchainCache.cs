@@ -156,6 +156,11 @@ namespace WebWallet.Helpers
 
                         var txHashes = new List<string>();
 
+                            if (txHashes == null)
+                            {
+                                return;
+                            }
+
                         if (currentHeight > start)
                         {
                             if (end > currentHeight) end = currentHeight;
