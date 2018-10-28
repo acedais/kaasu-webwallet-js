@@ -110,13 +110,13 @@ namespace WebWallet.Helpers
                     currentHeight = 0;
                 }
                 var startHeight = 1;
-                var endHeight = Convert.ToInt32(Math.Ceiling((double)(currentHeight / 10000) * 10000)) + 10000;
+                var endHeight = Convert.ToInt32(Math.Ceiling((double)(currentHeight / 100) * 100)) + 100;
                 logger.Log(LogLevel.Information, $"Processing transactions from blocks {startHeight} to {endHeight}");
-                //now, splt the current height into blocks of 10000
-                for (int i = startHeight; i <= endHeight; i += 10000)
+                //now, splt the current height into blocks of 100
+                for (int i = startHeight; i <= endHeight; i += 100)
                 {
                     var start = i;
-                    var end = i + 10000 - 1;
+                    var end = i + 100 - 1;
                     //retreive, transform and cache the blockchain and store in LiteDB
                     using (var db = new LiteDatabase(string.Concat(AppContext.BaseDirectory, @"App_Data/", "transactions_", start, "-", end, ".db")))
                     {
@@ -173,7 +173,8 @@ namespace WebWallet.Helpers
                                     //then, get the blockHash for the height we're currently processing...
                                     var hash_args = new Dictionary<string, object>();
                                     hash_args.Add("hash", blockHash);
-
+                                    //if this fails we want it to exit, wait 30 seconds and startup again
+                                    txHashes.AddRange(RpcHelper.RequestJson<BlockJsonResp>("f_block_json", hash_args).result.block.transactions.Select(x => x.hash).ToList<string>());
                                     //next, get the block itself and extract all the tx hashes....
                                     if (counter == 50 || gCounter == currentHeight)
                                     {
