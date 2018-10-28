@@ -151,20 +151,10 @@ namespace WebWallet.Helpers
                         {
                             LogException(ex);
                         }
-                        var counter = 0;
+                        var counter = 1;
                         var gCounter = start;
 
                         var txHashes = new List<string>();
-                        
-                        if (txHashes == null)
-                        {
-                            return;
-                        }
-
-                            if (txHashes == null)
-                            {
-                                return;
-                            }
 
                         if (currentHeight > start)
                         {
@@ -183,8 +173,7 @@ namespace WebWallet.Helpers
                                     //then, get the blockHash for the height we're currently processing...
                                     var hash_args = new Dictionary<string, object>();
                                     hash_args.Add("hash", blockHash);
-                                    //if this fails we want it to exit, wait 30 seconds and startup again
-                                    txHashes.AddRange(RpcHelper.RequestJson<BlockJsonResp>("f_block_json", hash_args).result.block.transactions.Select(x => x.hash).ToList<string>());
+
                                     //next, get the block itself and extract all the tx hashes....
                                     if (counter == 50 || gCounter == currentHeight)
                                     {
