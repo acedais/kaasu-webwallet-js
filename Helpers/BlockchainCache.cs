@@ -109,7 +109,7 @@ namespace WebWallet.Helpers
                 {
                     currentHeight = 0;
                 }
-                var startHeight = 0;
+                var startHeight = 1;
                 var endHeight = Convert.ToInt32(Math.Ceiling((double)(currentHeight / 10000) * 10000)) + 10000;
                 logger.Log(LogLevel.Information, $"Processing transactions from blocks {startHeight} to {endHeight}");
                 //now, splt the current height into blocks of 10000
