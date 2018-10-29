@@ -110,13 +110,13 @@ namespace WebWallet.Helpers
                     currentHeight = 0;
                 }
                 var startHeight = 1;
-                var endHeight = Convert.ToInt32(Math.Ceiling((double)(currentHeight / 10000) * 10000)) + 10000;
+                var endHeight = Convert.ToInt32(Math.Ceiling((double)(currentHeight / 1000) * 1000)) + 1000;
                 logger.Log(LogLevel.Information, $"Processing transactions from blocks {startHeight} to {endHeight}");
                 //now, splt the current height into blocks of 10000
-                for (int i = startHeight; i <= endHeight; i += 10000)
+                for (int i = startHeight; i <= endHeight; i += 1000)
                 {
                     var start = i;
-                    var end = i + 10000 - 1;
+                    var end = i + 1000 - 1;
                     //retreive, transform and cache the blockchain and store in LiteDB
                     using (var db = new LiteDatabase(string.Concat(AppContext.BaseDirectory, @"App_Data/", "transactions_", start, "-", end, ".db")))
                     {
