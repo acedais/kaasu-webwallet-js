@@ -103,20 +103,20 @@ namespace WebWallet.Helpers
                 var currentHeight = 0;
                 try
                 {
-                    currentHeight = RpcHelper.Request<GetHeightResp>("getheight").Height - 1;
+                    currentHeight = RpcHelper.Request<GetHeightResp>("getheight").Height;
                 }
                 catch
                 {
                     currentHeight = 0;
                 }
                 var startHeight = 1;
-                var endHeight = Convert.ToInt32(Math.Ceiling((double)(currentHeight / 100) * 100)) + 100;
+                var endHeight = Convert.ToInt32(Math.Ceiling((double)(currentHeight / 10000) * 10000)) + 10000;
                 logger.Log(LogLevel.Information, $"Processing transactions from blocks {startHeight} to {endHeight}");
-                //now, splt the current height into blocks of 100
-                for (int i = startHeight; i <= endHeight; i += 100)
+                //now, splt the current height into blocks of 10000
+                for (int i = startHeight; i <= endHeight; i += 10000)
                 {
                     var start = i;
-                    var end = i + 100 - 1;
+                    var end = i + 10000 - 1;
                     //retreive, transform and cache the blockchain and store in LiteDB
                     using (var db = new LiteDatabase(string.Concat(AppContext.BaseDirectory, @"App_Data/", "transactions_", start, "-", end, ".db")))
                     {
@@ -199,22 +199,37 @@ namespace WebWallet.Helpers
                                                     transactionsToInsert.Add(cachedTx);
                                                 }
                                             }
+
                                             if (transactionsToInsert.Any())
                                             {
                                                 transactions.InsertBulk(transactionsToInsert);
-                                                logger.Log(LogLevel.Information, $"Added {transactionsToInsert.Count} transactions to cache.");
-                                                var distinctTxCount = transactionsToInsert.Select(x => x.height).Distinct().Count();
-                                                if (distinctTxCount != 50 && gCounter != currentHeight)
+                                                //check to ensure that each hash we added is also found in txHashes - if there's one or more missing, then we need to re-attempt the fetch for those individuallly
+                                                var insertedHashes = transactionsToInsert.Select(x => x.hash).Distinct().ToList();
+                                                var missingHashes = txHashes.Where(x => !insertedHashes.Contains(x)).ToList();
+                                                if (missingHashes.Any())
                                                 {
-                                                    logger.Log(LogLevel.Warning, $"Potentially missing transactions at height {gCounter}, expected min 50, found {distinctTxCount}");
-                                                    // so what do we do here, go back and try re-add the individual Tx's ?
-                                                    //fetch them all individually and try insert one by one?
+                                                    foreach (var missingHash in missingHashes)
+                                                    {
+                                                        logger.LogWarning($"missing hash found {missingHash} at height {gCounter}. Adding to re-check individual hashes.");
+
+                                                        var failedHash = new FailedHash()
+                                                        {
+                                                            DbFile = string.Concat(AppContext.BaseDirectory, @"App_Data/", "transactions_", start, "-", end, ".db"),
+                                                            hash = missingHash,
+                                                            height = gCounter,
+                                                            FetchAttempts = 0
+                                                        };
+                                                        using (var failedHashDb = new LiteDatabase(string.Concat(AppContext.BaseDirectory, @"App_Data/", "failedHashes.db")))
+                                                        {
+                                                            var failedTransactions = db.GetCollection<FailedHash>("failed_txs");
+                                                            failedTransactions.EnsureIndex(x => x.height);
+                                                            failedTransactions.EnsureIndex(x => x.hash);
+                                                            failedTransactions.Insert(failedHash);
+                                                        }
+                                                    }
                                                 }
-                                                else
-                                                {
-                                                    //we've added the 50 hashes, so now clear the Tx Cache
-                                                    txHashes.Clear(); // clear the current set of hashes
-                                                }
+                                                txHashes.Clear(); // clear the current set of hashes
+                                                
                                             }
                                         }
                                         catch (Exception ex)
@@ -240,7 +255,8 @@ namespace WebWallet.Helpers
                                                         height = gCounter,
                                                         FetchAttempts = 0
                                                     };
-                                                    using (var failedHashDb = new LiteDatabase(string.Concat(AppContext.BaseDirectory, @"App_Data/", "failedHashes.db"))) {
+                                                    using (var failedHashDb = new LiteDatabase(string.Concat(AppContext.BaseDirectory, @"App_Data/", "failedHashes.db")))
+                                                    {
                                                         var failedTransactions = db.GetCollection<FailedHash>("failed_txs");
                                                         failedTransactions.EnsureIndex(x => x.height);
                                                         failedTransactions.EnsureIndex(x => x.hash);
