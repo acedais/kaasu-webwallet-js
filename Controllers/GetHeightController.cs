@@ -16,7 +16,6 @@ namespace WebWallet.Controllers
     [ApiController]
     public class GetHeightController : ControllerBase
     {
-
         [HttpGet]
         public ContentResult Get()
         {
