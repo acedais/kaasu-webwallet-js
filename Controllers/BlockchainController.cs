@@ -19,6 +19,7 @@ namespace WebWallet.Controllers
         public JsonResult Get(int height = 0)
         {
             //TODO: Update this to split get Tx's from Split BC cache
+            var sizeBlock = 1000;
             var startHeight = Convert.ToInt32(Math.Floor((double)(height / 100) * 100));
             var endHeight = startHeight + 100;
             if (startHeight < 1) startHeight = 1;
@@ -27,8 +28,8 @@ namespace WebWallet.Controllers
             if (endHeight > chainHeight)
                 endHeight = chainHeight;
             //used to pick the correct file
-            var start = Convert.ToInt32(Math.Floor((double)(height / 10000) * 10000)) + 1;
-            var end = start + 10000 - 1;
+            var start = Convert.ToInt32(Math.Floor((double)(height / sizeBlock) * sizeBlock)) + 1;
+            var end = start + sizeBlock - 1;
 
             try
             {
