@@ -307,6 +307,11 @@ export class TransactionsExplorer {
 				return;
 			}
 
+
+			console.log('paymentId');
+			console.log(paymentId);
+			console.log(userPaymentId);
+			
 			if (paymentId !== '' && userPaymentId !== '') {
 				reject('address_payment_id_conflict_user_payment_id');
 				return;
@@ -382,9 +387,9 @@ export class TransactionsExplorer {
 				neededFee = newNeededFee;
 			}
 
-            if (neededFee < 10000000) {
-                neededFee = 10000000;
-            }
+	            // if (neededFee < 10000000) {
+	            //     neededFee = 10000000;
+	            // }
 
 			// neededFee = neededFee / 3 * 2;
 

@@ -9,7 +9,7 @@ global.config = {
 	txMinConfirms: 60,
 	txCoinbaseMinConfirms: 160,
 	addressPrefix: 111,
-	integratedAddressPrefix: 111,
+	integratedAddressPrefix: 0,
 	addressPrefixTestnet: 0,
 	integratedAddressPrefixTestnet: 0,
 	subAddressPrefix: 0,

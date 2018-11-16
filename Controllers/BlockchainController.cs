@@ -48,6 +48,7 @@ namespace WebWallet.Controllers
             catch (Exception ex)
             {
                 //todo: log and return client handlable exception
+                throw ex;
             }
 
             return new JsonResult("");

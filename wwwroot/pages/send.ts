@@ -219,12 +219,23 @@ class SendView extends DestructableView {
     }
 
     send() {
+
+        var destinationAddressTmp = this.destinationAddress;
+        var amountToSendTmp = this.amountToSend;
+
         let self = this;
         blockchainExplorer.getHeight().then(function (blockchainHeight: number) {
-            let amount = parseFloat(self.amountToSend);
-            if (self.destinationAddress !== null) {
+            let amount = parseFloat(amountToSendTmp);
+            if (destinationAddressTmp !== null) {
                 //todo use BigInteger
+
+                console.log(amount * Math.pow(10, config.coinUnitPlaces));
+                console.log(wallet.unlockedAmount(blockchainHeight));
+
                 if (amount * Math.pow(10, config.coinUnitPlaces) > wallet.unlockedAmount(blockchainHeight)) {
+
+                  
+
                     swal({
                         type: 'error',
                         title: i18n.t('sendPage.notEnoughMoneyModal.title'),
@@ -236,7 +247,7 @@ class SendView extends DestructableView {
 
                 //TODO use biginteger
                 let amountToSend = amount * Math.pow(10, config.coinUnitPlaces);
-                let destinationAddress = self.destinationAddress;
+                let destinationAddress = destinationAddressTmp;
 
                 swal({
                     title: i18n.t('sendPage.creatingTransferModal.title'),
@@ -250,7 +261,8 @@ class SendView extends DestructableView {
                         return blockchainExplorer.getRandomOuts(numberOuts);
                     }
                     , function (amount: number, feesAmount: number): Promise<void> {
-                        if (amount + feesAmount > wallet.unlockedAmount(blockchainHeight)) {
+                        console.log('toi day')
+                        if (Number(amount) + Number(feesAmount) > wallet.unlockedAmount(blockchainHeight)) {
                             swal({
                                 type: 'error',
                                 title: i18n.t('sendPage.notEnoughMoneyModal.title'),
@@ -373,7 +385,9 @@ class SendView extends DestructableView {
             this.destinationAddressValid = false;
         }
 
-    }
+        this.destinationAddress = this.destinationAddressUser;
+        this.destinationAddressValid = true;
+        console.log('destinationAddress', this.destinationAddress);    }
 
     @VueWatched()
     amountToSendWatch() {
