@@ -32,7 +32,7 @@ class NetworkView extends DestructableView{
 	@VueVar(0) networkDifficulty !: number;
 	@VueVar(0) lastReward !: number;
     @VueVar(0) lastBlockFound !: number;
-    @VueVar(100) currencyDivider !: number;
+    @VueVar(100000) currencyDivider !: number;
 
 	private intervalRefreshStat = 0;
 

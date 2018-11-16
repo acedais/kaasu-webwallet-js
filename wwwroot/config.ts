@@ -1,8 +1,8 @@
 let global : any = typeof window !== 'undefined' ? window : self;
 global.config = {
-    apiUrl: typeof window !== 'undefined' && window.location ? window.location.href.substr(0, window.location.href.lastIndexOf('/') + 1) + 'api/' : 'https://getkaasu.com/api/',
-	mainnetExplorerUrl: "https://getkaasu.info",
-	testnetExplorerUrl: "https://getkaasu.info/",
+    apiUrl: typeof window !== 'undefined' && window.location ? window.location.href.substr(0, window.location.href.lastIndexOf('/') + 1) + 'api/' : 'https://getkaasu.net/api/',
+	mainnetExplorerUrl: "http://getkaasu.info",
+	testnetExplorerUrl: "http://getkaasu.info/",
 	testnet: false,
     coinUnitPlaces: 5,
     coinDisplayUnitPlaces: 5,

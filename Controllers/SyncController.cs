@@ -18,7 +18,7 @@ namespace WebWallet.Controllers
         public JsonResult Get(int height = 0)
         {
             //TODO: Update this to split get Tx's from Split BC cache
-            
+            var sizeBlock = 1000;
             var startHeight = height;
             var endHeight = startHeight + 100;
             if (startHeight < 1) startHeight = 1;
@@ -29,11 +29,11 @@ namespace WebWallet.Controllers
                 endHeight = chainHeight;
 
             List<int> dbSegments = new List<int>();
-            var segmentStart = Convert.ToInt32(Math.Floor((double)(startHeight / 10000) * 10000)) + 1;
+            var segmentStart = Convert.ToInt32(Math.Floor((double)(startHeight / sizeBlock) * sizeBlock)) + 1;
             dbSegments.Add(segmentStart);
-            if (startHeight + 100 > segmentStart + 10000 - 1)
+            if (startHeight + 100 > segmentStart + sizeBlock - 1)
             {
-                dbSegments.Add(segmentStart + 10000);
+                dbSegments.Add(segmentStart + sizeBlock);
             }
             try
             {
@@ -44,7 +44,7 @@ namespace WebWallet.Controllers
                 List<LightTx> transactions = new List<LightTx>();
                 foreach (var start in dbSegments)
                 {
-                    var end = start + 10000 - 1;
+                    var end = start + sizeBlock - 1;
                     
                     using (var db = new LiteDatabase(string.Concat(AppContext.BaseDirectory, @"App_Data\", "transactions_", start, "-", end, ".db")))
                     {
