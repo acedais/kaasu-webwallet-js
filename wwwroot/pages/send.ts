@@ -41,7 +41,7 @@ class SendView extends DestructableView {
     @VueVar('') destinationAddressUser !: string;
     @VueVar('') destinationAddress !: string;
     @VueVar(false) destinationAddressValid !: boolean;
-    @VueVar('10.5') amountToSend !: string;
+    @VueVar('0.00000') amountToSend !: string;
     @VueVar(false) lockedForm !: boolean;
     @VueVar(true) amountToSendValid !: boolean;
     @VueVar('') paymentId !: string;
