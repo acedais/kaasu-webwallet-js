@@ -229,8 +229,8 @@ class SendView extends DestructableView {
             if (destinationAddressTmp !== null) {
                 //todo use BigInteger
 
-                console.log(amount * Math.pow(10, config.coinUnitPlaces));
-                console.log(wallet.unlockedAmount(blockchainHeight));
+                // console.log(amount * Math.pow(10, config.coinUnitPlaces));
+                // console.log(wallet.unlockedAmount(blockchainHeight));
 
                 if (amount * Math.pow(10, config.coinUnitPlaces) > wallet.unlockedAmount(blockchainHeight)) {
 
@@ -261,7 +261,6 @@ class SendView extends DestructableView {
                         return blockchainExplorer.getRandomOuts(numberOuts);
                     }
                     , function (amount: number, feesAmount: number): Promise<void> {
-                        console.log('toi day')
                         if (Number(amount) + Number(feesAmount) > wallet.unlockedAmount(blockchainHeight)) {
                             swal({
                                 type: 'error',
@@ -387,7 +386,8 @@ class SendView extends DestructableView {
 
         this.destinationAddress = this.destinationAddressUser;
         this.destinationAddressValid = true;
-        console.log('destinationAddress', this.destinationAddress);    }
+        // console.log('destinationAddress', this.destinationAddress);    
+    }
 
     @VueWatched()
     amountToSendWatch() {

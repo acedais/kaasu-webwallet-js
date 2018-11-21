@@ -517,14 +517,14 @@ var cnUtil = (function (initConfig) {
 
     this.decode_address = function (address) {
         var dec = cnBase58.decode(address);
-        console.log(address);
-        console.log('dec', dec);
+        // console.log(address);
+        // console.log('dec', dec);
         // console.log(dec, CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX, CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX);
         var expectedPrefix = this.encode_varint(CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX);
         var expectedPrefixInt = this.encode_varint(CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX);
         var expectedPrefixSub = this.encode_varint(CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX);
         var prefix = dec.slice(0, expectedPrefix.length);
-        console.log(prefix, expectedPrefixInt, expectedPrefix);
+        // console.log(prefix, expectedPrefixInt, expectedPrefix);
         if (prefix !== expectedPrefix && prefix !== expectedPrefixInt && prefix !== expectedPrefixSub) {
             throw "Invalid address prefix";
         }
@@ -541,17 +541,17 @@ var cnUtil = (function (initConfig) {
         }
 
 
-        console.log('==============');
-        console.log('prefix', prefix);
-        console.log('expectedPrefixInt', expectedPrefixInt);
+        // console.log('==============');
+        // console.log('prefix', prefix);
+        // console.log('expectedPrefixInt', expectedPrefixInt);
 
-        console.log('checksum', dec.slice(128 + (INTEGRATED_ID_SIZE * 2), 128 + (INTEGRATED_ID_SIZE * 2) + (ADDRESS_CHECKSUM_SIZE * 2)));
-        console.log(128 + (INTEGRATED_ID_SIZE * 2));
-        console.log(128 + (INTEGRATED_ID_SIZE * 2) + (ADDRESS_CHECKSUM_SIZE * 2));
+        // console.log('checksum', dec.slice(128 + (INTEGRATED_ID_SIZE * 2), 128 + (INTEGRATED_ID_SIZE * 2) + (ADDRESS_CHECKSUM_SIZE * 2)));
+        // console.log(128 + (INTEGRATED_ID_SIZE * 2));
+        // console.log(128 + (INTEGRATED_ID_SIZE * 2) + (ADDRESS_CHECKSUM_SIZE * 2));
 
-        console.log('checksum', checksum);
-        console.log('expectedChecksum', expectedChecksum);
-        console.log('==============');
+        // console.log('checksum', checksum);
+        // console.log('expectedChecksum', expectedChecksum);
+        // console.log('==============');
 
         if (checksum !== expectedChecksum) {
             throw "Invalid checksum";

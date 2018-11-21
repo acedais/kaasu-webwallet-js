@@ -308,9 +308,9 @@ export class TransactionsExplorer {
 			}
 
 
-			console.log('paymentId');
-			console.log(paymentId);
-			console.log(userPaymentId);
+			// console.log('paymentId');
+			// console.log(paymentId);
+			// console.log(userPaymentId);
 			
 			if (paymentId !== '' && userPaymentId !== '') {
 				reject('address_payment_id_conflict_user_payment_id');
@@ -392,6 +392,10 @@ export class TransactionsExplorer {
 	            // }
 
 			// neededFee = neededFee / 3 * 2;
+
+			if (config.decimalPoints) {
+				neededFee = config.fixedFee;
+			}
 
 			//console.log('using amount of ' + usingOuts_amount + ' for sending ' + totalAmountWithoutFee + ' with fees of ' + (neededFee / 100000000));
 			confirmCallback(totalAmountWithoutFee, neededFee).then(function () {

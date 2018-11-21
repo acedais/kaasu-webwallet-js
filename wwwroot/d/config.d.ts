@@ -24,4 +24,8 @@ declare var config : {
 	idleWarningDuration: number,
 	maxBlockNumber: number,
 	avgBlockTime: number,
+
+
+	fixedFee: any, // 0.00010 or false
+	decimalPoints: number
 };
