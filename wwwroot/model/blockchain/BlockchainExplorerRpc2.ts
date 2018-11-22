@@ -241,7 +241,7 @@ export class WalletWatchdog {
                 let previousStartBlock = self.lastBlockLoading;
                 let startBlock = Math.floor(self.lastBlockLoading / 100) * 100;
                 // console.log('=>',self.lastBlockLoading, endBlock, height, startBlock, self.lastBlockLoading);
-                console.log('load block from ' + startBlock + ' (actual block: ' + previousStartBlock + ') at height :' + height);
+                // console.log('load block from ' + startBlock + ' (actual block: ' + previousStartBlock + ') at height :' + height);
                 if (previousStartBlock <= height) {
                     self.explorer.getTransactionsForBlocks(previousStartBlock).then(function (transactions: RawDaemonTransaction[]) {
                         //to ensure no pile explosion

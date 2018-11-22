@@ -26,6 +26,10 @@ import {VueFilterPiconero} from "../filters/Filters";
 let wallet : Wallet = DependencyInjectorInstance().getInstance(Wallet.name,'default', false);
 let blockchainExplorer = DependencyInjectorInstance().getInstance(Constants.BLOCKCHAIN_EXPLORER);
 
+let countTransactions = 0;
+let pageRange = config.pageRange;
+let currentPage = 1;
+
 @VueRequireFilter('piconero', VueFilterPiconero)
 class AccountView extends DestructableView{
 	@VueVar([]) transactions !: Transaction[];
@@ -36,6 +40,11 @@ class AccountView extends DestructableView{
 	@VueVar(0) currentScanBlock !: number;
 	@VueVar(0) blockchainHeight !: number;
 	@VueVar(config.decimalPoints) currencyDivider !: number;
+
+
+	@VueVar(pageRange) pageRange !: number;
+	@VueVar(1) pageCount  !: number;
+
 
     intervalRefresh : number = 0;
 
@@ -92,9 +101,30 @@ class AccountView extends DestructableView{
 		this.walletAmount = wallet.amount;
 		this.unlockedWalletAmount = wallet.unlockedAmount(this.currentScanBlock);
 		if(wallet.getAll().length+wallet.txsMem.length !== this.transactions.length) {
-            this.transactions = wallet.txsMem.concat(wallet.getTransactionsCopy().reverse());
-            this.fusionCount = wallet.fusionTxs.length;
+            
+            this.paginatedData();
 		}
+	}
+
+	clickPageCallback(pageNum = 1) {
+
+		currentPage = pageNum;		
+	}
+
+	paginatedData() {
+		this.transactions = wallet.txsMem.concat(wallet.getTransactionsCopy().reverse());
+		this.fusionCount = wallet.fusionTxs.length;
+
+		countTransactions = this.transactions.length;
+		this.pageCount = Math.floor(countTransactions / pageRange);
+		console.log('this.pageCount', this.pageCount);
+		if (this.pageCount > 0) {
+			const start = (currentPage * pageRange) - 1,
+	        end = start + pageRange;
+	        console.log('start', start, end);
+	      	this.transactions = this.transactions.slice(start, end);
+
+        }
 	}
 }
 
