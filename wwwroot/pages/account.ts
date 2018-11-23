@@ -108,7 +108,8 @@ class AccountView extends DestructableView{
 
 	clickPageCallback(pageNum = 1) {
 
-		currentPage = pageNum;		
+		currentPage = pageNum;	
+		AccountView.prototype.paginatedData();
 	}
 
 	paginatedData() {
@@ -117,11 +118,11 @@ class AccountView extends DestructableView{
 
 		countTransactions = this.transactions.length;
 		this.pageCount = Math.floor(countTransactions / pageRange);
-		console.log('this.pageCount', this.pageCount);
+		// console.log('this.pageCount', this.pageCount);
 		if (this.pageCount > 0) {
 			const start = (currentPage * pageRange) - 1,
 	        end = start + pageRange;
-	        console.log('start', start, end);
+	        // console.log('start', start, end);
 	      	this.transactions = this.transactions.slice(start, end);
 
         }
