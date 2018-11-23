@@ -81,7 +81,8 @@ class SendView extends DestructableView {
         this.lockedForm = false;
         this.destinationAddressUser = '';
         this.destinationAddress = '';
-        this.amountToSend = '10.5';
+        this.amountToSend = '0.000000';
+        this.paymentId = '';
         this.destinationAddressValid = false;
         this.qrScanning = false;
         this.amountToSendValid = false;
@@ -167,12 +168,12 @@ class SendView extends DestructableView {
             if (txDetails !== null) {
                 self.destinationAddressUser = txDetails.address;
                 if (typeof txDetails.description !== 'undefined') self.txDescription = txDetails.description;
+                if (typeof txDetails.paymentId !== 'undefined') self.paymentId = txDetails.paymentId;
                 if (typeof txDetails.recipientName !== 'undefined') self.txDestinationName = txDetails.recipientName;
                 if (typeof txDetails.amount !== 'undefined') {
                     self.amountToSend = txDetails.amount;
                     self.lockedForm = true;
                 }
-                if(typeof txDetails.paymentId !== 'undefined')self.paymentId = txDetails.paymentId;
                 parsed = true;
             }
         } catch (e) {
