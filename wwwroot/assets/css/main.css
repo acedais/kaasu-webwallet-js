@@ -1071,3 +1071,57 @@ body{
 .progress .label{
 	display: block;
 }
+
+
+
+/*pagination transactions*/
+.wap_pagination:before, .wap_pagination:after{
+	content: '';
+	display: table;
+}
+.wap_pagination:after {
+	clear: both;
+}
+.pagination {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin-top: 20px;
+  margin-right: 20px;
+  float: right;
+}
+.pagination li {
+  display: inline;
+  text-align: center;
+}
+.pagination li.disabled a {
+	cursor: no-drop;
+}
+.pagination a {
+  float: left;
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px 12px;
+  color: #4e586e;
+  margin-left: -1px;
+  border: 1px solid #c4c4c4;
+  line-height: 1.5;
+}
+.pagination li.active a {
+  cursor: default;
+  font-weight: 700;
+}
+.pagination a:active {
+  outline: none;
+}
+
+ul.pagination li:first-child a {    
+	border-radius: 5px 0 0 5px;
+}
+
+ul.pagination li:last-child a { 
+    border-radius: 0 5px 5px 0;
+}
+
+/* end pagination transactions*/

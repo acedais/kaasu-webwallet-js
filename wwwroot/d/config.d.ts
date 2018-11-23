@@ -27,5 +27,6 @@ declare var config : {
 
 
 	fixedFee: any, // 0.00010 or false
-	decimalPoints: number
+	decimalPoints: number,
+	pageRange: number // transactions paging
 };

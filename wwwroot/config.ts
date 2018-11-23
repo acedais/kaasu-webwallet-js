@@ -25,6 +25,7 @@ global.config = {
 	avgBlockTime: 120,
 	maxBlockNumber: 500000000,
 
-	fixedFee: 0.0001 * 100000, // 0.00010 * 100000 or false __ 100000 is decimalPoints
-	decimalPoints: 100000
+	fixedFee: false, //0.0004 * 100000, // 0.00010 * 100000 or false __ 100000 is decimalPoints
+	decimalPoints: 100000,
+	pageRange: 5 // transactions paging
 };
