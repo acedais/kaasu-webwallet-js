@@ -393,9 +393,6 @@ export class TransactionsExplorer {
 
 			// neededFee = neededFee / 3 * 2;
 
-			if (config.decimalPoints) {
-				neededFee = config.fixedFee;
-			}
 
 			//console.log('using amount of ' + usingOuts_amount + ' for sending ' + totalAmountWithoutFee + ' with fees of ' + (neededFee / 100000000));
 			confirmCallback(totalAmountWithoutFee, neededFee).then(function () {

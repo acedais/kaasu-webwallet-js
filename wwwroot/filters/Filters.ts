@@ -15,5 +15,5 @@
  */
 
 export function VueFilterPiconero(value : number){
-	return value/config.decimalPoints;
+	return value/100000;
 }
