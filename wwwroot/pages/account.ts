@@ -117,15 +117,15 @@ class AccountView extends DestructableView{
 		this.fusionCount = wallet.fusionTxs.length;
 
 		countTransactions = this.transactions.length;
-		this.pageCount = Math.floor(countTransactions / pageRange);
-		// console.log('this.pageCount', this.pageCount);
-		if (this.pageCount > 0) {
-			const start = (currentPage * pageRange) - 1,
+		this.pageCount = Math.ceil(countTransactions / pageRange);
+
+		if(this.pageCount > 0) {
+			const start = ((currentPage-1) * pageRange),
 	        end = start + pageRange;
 	        // console.log('start', start, end);
 	      	this.transactions = this.transactions.slice(start, end);
+	    }
 
-        }
 	}
 }
 
