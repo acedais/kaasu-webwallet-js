@@ -108,6 +108,7 @@ namespace WebWallet
             using (var jobServer = new BackgroundJobServer(new BackgroundJobServerOptions { ServerName = "BackgroundJobServer", WorkerCount = 1 }))
             {
                 BackgroundJob.Enqueue(() => BlockchainCache.BuildCache(null));
+                BackgroundJob.Enqueue(() => SendNotification.Send(null));
             }
 
         }

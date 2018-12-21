@@ -36,6 +36,14 @@ let blockchainExplorer: BlockchainExplorerRpc2 = BlockchainExplorerProvider.getI
 
 AppState.enableLeftMenu();
 
+
+declare global {
+  interface Window {
+    SendViewApp: any
+  }
+}
+
+
 @VueRequireFilter('piconero', VueFilterPiconero)
 class SendView extends DestructableView {
     @VueVar('') destinationAddressUser !: string;
@@ -212,6 +220,42 @@ class SendView extends DestructableView {
 
     }
 
+    startScanByApp() {
+        window.isAndroid.qrCodeSend("SendViewApp");
+    }
+
+    handleScanResultApp(result: string) {
+        console.log('Scan result:', result);
+        let self = this;
+        let parsed = false;
+        try {
+            let txDetails = CoinUri.decodeTx(result);
+            if (txDetails !== null) {
+                self.destinationAddressUser = txDetails.address;
+                if (typeof txDetails.description !== 'undefined') self.txDescription = txDetails.description;
+                if (typeof txDetails.paymentId !== 'undefined') self.paymentId = txDetails.paymentId;
+                if (typeof txDetails.recipientName !== 'undefined') self.txDestinationName = txDetails.recipientName;
+                if (typeof txDetails.amount !== 'undefined') {
+                    self.amountToSend = txDetails.amount;
+                    self.lockedForm = true;
+                }
+                parsed = true;
+            }
+        } catch (e) {
+        }
+
+        try {
+            let txDetails = CoinUri.decodeWallet(result);
+            if (txDetails !== null) {
+                self.destinationAddressUser = txDetails.address;
+                parsed = true;
+            }
+        } catch (e) {
+        }
+
+        if (!parsed)
+            self.destinationAddressUser = result;
+    }
 
     destruct(): Promise<void> {
         this.stopScan();
@@ -333,6 +377,7 @@ class SendView extends DestructableView {
                                 });
 
                             promise.then(function () {
+                                window.isAndroid.afterImport("Account", "#!account");
                                 if (self.redirectUrlAfterSend !== null) {
                                     window.location.href = self.redirectUrlAfterSend.replace('{TX_HASH}', data.raw);
                                 }
@@ -415,15 +460,14 @@ class SendView extends DestructableView {
 
 }
 
-
 if (wallet !== null && blockchainExplorer !== null)
-    new SendView('#app');
+    window.SendViewApp = new SendView('#app');
 else {
     AppState.askUserOpenWallet(false).then(function () {
         wallet = DependencyInjectorInstance().getInstance(Wallet.name, 'default', false);
         if (wallet === null)
             throw 'e';
-        new SendView('#app');
+        window.SendViewApp = new SendView('#app');
     }).catch(function () {
         window.location.href = '#index';
     });

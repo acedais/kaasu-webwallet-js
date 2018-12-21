@@ -11,6 +11,7 @@
 import {Logger} from "./Logger";
 import {DestructableView} from "./DestructableView";
 import {Context} from "./Context";
+import {AppState} from "../../model/AppState";
 
 export class Router {
 	currentPage: string | null = null;
@@ -80,8 +81,23 @@ export class Router {
 
 			Logger.debug(self, 'Changing to page '+self.currentPage);
 
-			let promiseContent = self.loadContent(self.routerBaseHtmlRelativity+'pages/' + newPageName + '.html');
-			let jsContentPath = self.routerBaseJsRelativity+'pages/' + newPageName + '.js';
+			
+			let pathPage = 'pages'
+			let pathNameUrl = window.location.pathname.replace('/', '');
+
+			if (pathNameUrl === 'app.html') {
+
+				let searchParams = new URLSearchParams(window.location.search);
+				let passwd = searchParams.get('passWd');
+
+				if(passwd != null) {
+					AppState.checkPassWd(passwd, Router.extractPageFromUrl() == 'account');
+				}
+				pathPage = 'apps';
+			}
+
+			let promiseContent = self.loadContent(self.routerBaseHtmlRelativity + pathPage + '/' + newPageName + '.html');
+			let jsContentPath = self.routerBaseJsRelativity + pathPage + '/' + newPageName + '.js';
 
 			Promise.all([promiseContent]).then(function (data: string[]) {
 				let content = data[0];

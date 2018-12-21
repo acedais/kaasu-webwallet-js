@@ -1,0 +1,25 @@
+<div id="app" class="body-root import" v-cloak="">
+	<div class="body-header" >
+		<div class="header-title">
+			34c33fd918c2417bbd4d6e9c42be6aee0ff7b82bced057cca55562f6b6af1605
+			6c59a2bb77a93c6018ba990658074640bcbbfca4d2d3b3721fdfa8c7202e7b07
+			{{ $t("importPage.title") }}
+		</div>
+		<div class="header-subtitle" >
+			{{ $t("importPage.subtitle") }}
+		</div>
+	</div>
+	<div class="body-content" >
+		<div class="">
+			<div class="body" >
+				<div class="header-title" >{{ $t("importPage.chooseMethod") }}</div>
+				<div class="content tc">
+					<a href="javascript:;" @click="importFromType( $t('importPage.fromKeys'), '#!importFromKeys');" class="btn" >{{ $t("importPage.fromKeys") }}</a>
+					<!-- <a href="javascript:;" @click="importFromType( $t('importPage.fromFile'), '#!importFromFile');" class="btn" >{{ $t("importPage.fromFile") }}</a> -->
+					<a href="javascript:;" @click="importFromType( $t('importPage.fromMnemonic'), '#!importFromMnemonic');" class="btn" >{{ $t("importPage.fromMnemonic") }}</a>
+					<a href="javascript:;" @click="importFromType( $t('importPage.fromQr'), '#!importFromQr');" class="btn" >{{ $t("importPage.fromQr") }}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

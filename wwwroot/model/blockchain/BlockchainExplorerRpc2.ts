@@ -110,6 +110,7 @@ export class WalletWatchdog {
             if (typeof data !== 'undefined')
                 for (let rawTx of data) {
                     let tx = TransactionsExplorer.parse(rawTx, self.wallet);
+
                     if (tx !== null) {
                         if (tx.isFusionTx()) {
                             self.wallet.fusionTxs.push(tx);
@@ -118,6 +119,53 @@ export class WalletWatchdog {
                         }
                     }
                 }
+        }).catch(function () { });
+        return true;
+    }
+
+
+
+    // call api saveHash
+    saveHash(publicKey: any, amount: any, newTransaction: any) {
+        for (let transaction of newTransaction) {
+
+            console.log('1', transaction.hash);
+            if (transaction.hash) {
+                console.log(transaction.hash);
+                $.post(config.apiUrl + 'notification/savetxhash', { hash: transaction.hash, amount: amount , publicKey: publicKey })
+                .done(function (result: any) {
+                    console.log('result save hash', result);
+
+                }).fail(function (data: any) {
+                    console.log('error savetxhash');
+                });
+            }
+        }
+    }
+
+    // use for send.ts
+    getHashAfterSend(publicKey: any, amount: any): boolean {
+        let self = this;
+        
+        // console.log('wallet getHashAfterSend');
+
+        this.explorer.getTransactionPool().then(function (data: any) {
+            if (typeof data !== 'undefined') {
+
+                let newTransaction:any[] = [];
+
+                for (let rawTx of data) {
+                    let tx = TransactionsExplorer.parse(rawTx, self.wallet);
+
+                    if (tx !== null) {
+                        newTransaction.push(tx);
+                    }
+                }
+
+                if (newTransaction) {
+                    self.saveHash(publicKey, amount, newTransaction);
+                }
+            }
         }).catch(function () { });
         return true;
     }

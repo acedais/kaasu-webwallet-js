@@ -10,11 +10,13 @@ namespace WebWallet.Helpers
     {
         public static string RpcUrl { get; set; }
         public static int RpcPort { get; set; }
+        public static string CloudMessaging { get; set; }
 
         public static IServiceProvider ConfigureSettings(this IServiceProvider serviceProvider, IConfiguration config)
         {
             RpcUrl = config.GetValue<string>("RpcUrl");
             RpcPort = config.GetValue<int>("RpcPort");
+            CloudMessaging = config.GetValue<string>("CloudMessaging");
             return serviceProvider;
         }
     }

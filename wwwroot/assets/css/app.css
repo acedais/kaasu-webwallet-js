@@ -1,0 +1,27 @@
+body.menuHidden #page,#page{
+	margin-left: 0;
+}
+.body-header {
+	border: none;
+	padding: 0;
+}
+
+/* page import */
+.import .body .header-title {
+	padding-bottom: 20px;
+}
+
+.import .btn{
+	display: block;
+}
+
+
+/* page import from key */
+
+.body-root {
+    padding: 0px 15px;
+}
+
+#page {
+	left: 0
+}
