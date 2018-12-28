@@ -1,6 +1,7 @@
 export default class Ios {
-	
 	savePass (password: any) {
-		alert(password);
+		if (window.webkit) {
+			window.webkit.messageHandlers.action.postMessage({password:password});
+		}
 	}
 }

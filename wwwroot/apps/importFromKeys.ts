@@ -23,15 +23,16 @@ import {Wallet} from "../model/Wallet";
 import {KeysRepository} from "../model/KeysRepository";
 import {BlockchainExplorerProvider} from "../providers/BlockchainExplorerProvider";
 import {BlockchainExplorerRpc2} from "../model/blockchain/BlockchainExplorerRpc2";
+import HandleApp from "../model/HandleApp";
 
 AppState.enableLeftMenu();
 
 let blockchainExplorer : BlockchainExplorerRpc2 = BlockchainExplorerProvider.getInstance();
 
-class ImportView extends DestructableView{
+export default class ImportView extends DestructableView{
 	@VueVar(false) viewOnly !: boolean;
 
-	@VueVar('') privateSpendKey !: string;
+	@VueVar('34c33fd918c2417bbd4d6e9c42be6aee0ff7b82bced057cca55562f6b6af1605') privateSpendKey !: string;
 	@VueVar(false) validPrivateSpendKey !: boolean;
 	@VueVar('') privateViewKey !: string;
 	@VueVar(false) validPrivateViewKey !: boolean;
@@ -46,6 +47,7 @@ class ImportView extends DestructableView{
 
 	constructor(container : string){
 		super(container);
+		document.title = i18n.t('importPage.fromKeys');
 	}
 
 	formValid(){
@@ -55,11 +57,11 @@ class ImportView extends DestructableView{
 		if(!(this.password !== '' && (!this.insecurePassword || this.forceInsecurePassword)))
 			return false;
 
-		if(!(
-			(!this.viewOnly && this.validPrivateSpendKey) ||
-			(this.viewOnly && this.validPublicAddress && this.validPrivateViewKey)
-		))
-			return false;
+		// if(!(
+		// 	(!this.viewOnly && this.validPrivateSpendKey) ||
+		// 	(this.viewOnly && this.validPublicAddress && this.validPrivateViewKey)
+		// ))
+		// 	return false;
 		return true;
 	}
 
@@ -103,7 +105,10 @@ class ImportView extends DestructableView{
 
 			AppState.openWallet(newWallet, self.password);
 			// window.location.href = '#account';
-			window.isAndroid.afterImport("Account", "#!account");
+
+			if (HandleApp.getMobileOperatingSystem() == 'Android') {
+				window.isAndroid.afterImport("Account", "#!account");
+			}
 
 		});
 	}

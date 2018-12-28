@@ -9,6 +9,7 @@ declare global {
     newTransaction: any[],
     AccountView: any,
     SettingApp: any,
+    webkit: any
   }
 }
 
@@ -17,8 +18,15 @@ export default class HandleApp {
 	
 	static savePass(password: any) {
 
-		var device = Android; //this.getMobileOperatingSystem();
+		var getDevice = HandleApp.getMobileOperatingSystem(); //this.getMobileOperatingSystem();
+		var device;
 
+		if (getDevice == 'Ios') {
+			device = Ios;
+		} else {
+			device = Android;
+		}
+		
 		if (device) {
 			let app = new device;
 			app.savePass(password);
@@ -29,19 +37,16 @@ export default class HandleApp {
 
 	static getMobileOperatingSystem() {
 	  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
 	    if (/windows phone/i.test(userAgent)) {
 	        return false; //Windowsphone;
 	    }
-
-	    if (/android/i.test(userAgent)) {
-	        return Android;
+	    else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+	    	console.log("bbb");
+	        return 'Ios';
 	    }
-
-	    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-	        return Ios;
+	    else if (/chrome|android/i.test(userAgent)) {
+	        return 'Android';
 	    }
-
 	    return false;
 	}
 }

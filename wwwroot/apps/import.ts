@@ -18,6 +18,8 @@
 import {AppState} from "../model/AppState";
 import {DestructableView} from "../lib/numbersLab/DestructableView";
 
+declare var document: any;
+
 class ImportView extends DestructableView{
 	constructor(container : string){
 		super(container);
@@ -25,9 +27,10 @@ class ImportView extends DestructableView{
 	}
 
 	importFromType(title: String, url: String) {
-		window.isAndroid.importFromType(title, url);
+		if (window.isAndroid) {
+			window.isAndroid.importFromType(title, url);
+		}
 	}
-
 }
 
 new ImportView('#app');

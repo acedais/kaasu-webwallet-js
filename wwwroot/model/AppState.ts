@@ -25,6 +25,8 @@ import {Constants} from "./Constants";
 import {TransactionsExplorer} from "./TransactionsExplorer";
 
 import HandleApp from "./HandleApp";
+import {KeysRepository} from "../model/KeysRepository";
+let blockchainExplorer : BlockchainExplorerRpc2 = BlockchainExplorerProvider.getInstance();
 
 export class WalletWorker{
 	wallet : Wallet;
@@ -163,6 +165,7 @@ export class AppState{
 			// window.isAndroid.afterLoginFail();
 			// this.askUserOpenWallet();
 		}
+		
 	}
 
 	static askUserOpenWallet(redirectToHome:boolean=true){

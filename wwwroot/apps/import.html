@@ -14,6 +14,10 @@
 			<div class="body" >
 				<div class="header-title" >{{ $t("importPage.chooseMethod") }}</div>
 				<div class="content tc">
+					<a href="#!importFromKeys" class="btn" >{{ $t("importPage.fromKeys") }}</a>
+					
+					<!-- <a href="javascript:;" @click="buttonClickPAss()" class="btn" >{{ $t("importPage.fromKeys") }}</a> -->
+					<!-- <a href="#!importFromKeys" class="btn" >{{ $t("importPage.fromKeys") }}</a> -->
 					<a href="javascript:;" @click="importFromType( $t('importPage.fromKeys'), '#!importFromKeys');" class="btn" >{{ $t("importPage.fromKeys") }}</a>
 					<!-- <a href="javascript:;" @click="importFromType( $t('importPage.fromFile'), '#!importFromFile');" class="btn" >{{ $t("importPage.fromFile") }}</a> -->
 					<a href="javascript:;" @click="importFromType( $t('importPage.fromMnemonic'), '#!importFromMnemonic');" class="btn" >{{ $t("importPage.fromMnemonic") }}</a>
